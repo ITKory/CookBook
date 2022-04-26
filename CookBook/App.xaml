@@ -1,0 +1,39 @@
+﻿<Application
+    x:Class="CookBook.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Converter="clr-namespace:CookBook.Services.Convertors"
+    xmlns:local="clr-namespace:CookBook"
+    xmlns:view="clr-namespace:CookBook.Controls"
+    xmlns:vm="clr-namespace:CookBook.ViewModels"
+    StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/LayerDictionary.xaml" />
+                <ResourceDictionary Source="/Resources/ButtonsDictionary.xaml" />
+                <ResourceDictionary Source="/Resources/TextboxDictionary.xaml" />
+                <ResourceDictionary Source="/Resources/ThemeListView.xaml" />
+                <ResourceDictionary Source="/Resources/ListsDictionary.xaml" />
+                <ResourceDictionary Source="/Resources/TabMenuDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <DataTemplate DataType="{x:Type vm:SearchRecipeViewModel}">
+                <view:SearchRecipeUser />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+                <view:HomeUser  />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:SearchRecipeByInageModel}">
+                <view:SearchByImageUser />
+            </DataTemplate>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+
+</Application>
