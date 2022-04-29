@@ -10,13 +10,15 @@ namespace CookBook.Services.Convertors
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
 
-            return Regex.Replace(value.ToString(), @"<[^>]*>", String.Empty);
+            if (value == null)
+                return "";
+            return Regex.Replace(value as string, @"<[^>]*>", String.Empty);
 
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            return "";
         }
     }
 }

@@ -21,7 +21,7 @@
 
 
     <Grid>
-     
+
         <Grid Margin="20" Background="#EBF0EF">
 
             <Grid.Effect>
@@ -31,15 +31,7 @@
                     ShadowDepth="2"
                     Color="Gray" />
             </Grid.Effect>
-
-            <StackPanel
-                Width="100"
-                HorizontalAlignment="Left"
-               
-                Style="{StaticResource ResourceKey=TabMenu}"
-                Focusable="False">
-
-
+            <StackPanel Style="{StaticResource ResourceKey=TabMenu}">
                 <Button
                     x:Name="Home"
                     Height="60"
@@ -83,7 +75,7 @@
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Command="{Binding ChangeViewCommand}"
-                    CommandParameter="{Binding  RecipeByInageView}">
+                    CommandParameter="{Binding RecipeByInageView}">
                     <fa:ImageAwesome
                         Width="50"
                         Foreground="Gray"
@@ -116,17 +108,10 @@
                     VerticalAlignment="Center"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Click="ButtonClose_Click"
-                    Focusable="False">
-                    <fa:ImageAwesome
-                        Foreground="Gray"
-                        Icon="PowerOff"
-                        Style="{StaticResource ResourceKey=PowerOff}" />
+                    Click="ButtonClose_Click">
+                    <fa:ImageAwesome Foreground="Gray" Icon="PowerOff" />
                 </Button>
             </Grid>
-
-
-
 
             <ContentControl
                 MaxWidth="1000"
@@ -134,10 +119,6 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Content="{Binding CurrentView}" />
-
-
-
-
         </Grid>
 
     </Grid>

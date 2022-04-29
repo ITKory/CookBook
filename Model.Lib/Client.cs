@@ -1,7 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.Configuration;
+using Model.Lib.DataModels;
+using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Authenticators.OAuth2;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Model.Lib
@@ -11,11 +14,14 @@ namespace Model.Lib
         private RestClient _client;
         private RestRequest _request;
         private string _token = "54af571d0b5a4619b3250e376454136f";
-        private string _token2 = "70fd301d6a5d4114a0b84b27a0854b18";
         public Client()
         {
             _client = new();
             _client.Authenticator = new OAuth2AuthorizationRequestHeaderAuthenticator("token", "Bearer");
+
+            var builder = new ConfigurationBuilder().AddUserSecrets<ApiKey>().Build().Providers.First().TryGet("ApiKey:ReserveToken", out var token);
+
+            _token = token;
 
         }
 

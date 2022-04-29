@@ -24,6 +24,7 @@ namespace CookBook.ViewModels.Base
         private void Lay_CloseRequested(object? sender, System.Windows.RoutedEventArgs e)
         => _recipeLay.Hide();
 
+
         [ICommand]
         protected void OnSelected(object sender) => _recipeLay.Show();
     }

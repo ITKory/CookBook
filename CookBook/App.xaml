@@ -13,18 +13,17 @@
                 <ResourceDictionary Source="/Resources/LayerDictionary.xaml" />
                 <ResourceDictionary Source="/Resources/ButtonsDictionary.xaml" />
                 <ResourceDictionary Source="/Resources/TextboxDictionary.xaml" />
-                <ResourceDictionary Source="/Resources/ThemeListView.xaml" />
+                <ResourceDictionary Source="/Resources/ScrollBarDictionary.xaml" />
                 <ResourceDictionary Source="/Resources/ListsDictionary.xaml" />
                 <ResourceDictionary Source="/Resources/TabMenuDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
 
             <DataTemplate DataType="{x:Type vm:SearchRecipeViewModel}">
                 <view:SearchRecipeUser />
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type vm:HomeViewModel}">
-                <view:HomeUser  />
+                <view:HomeUser />
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type vm:SearchRecipeByInageModel}">

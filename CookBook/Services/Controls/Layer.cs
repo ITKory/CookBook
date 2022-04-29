@@ -56,7 +56,7 @@ namespace CookBook.Services.Controls
             get => (string)this.GetValue(TitleProperty);
             set
             {
-                //Show();
+
                 this.SetValue(TitleProperty, value);
             }
         }

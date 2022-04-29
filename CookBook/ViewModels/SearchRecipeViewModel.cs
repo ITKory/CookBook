@@ -15,6 +15,13 @@ namespace CookBook.ViewModels
 
         Client _restClient;
 
+        [ObservableProperty]
+        List<FullRecipeInformation> _recipeList;
+
+
+        [ObservableProperty]
+        string _recipeName;
+
         public SearchRecipeViewModel()
         {
             _restClient = new();
@@ -22,12 +29,6 @@ namespace CookBook.ViewModels
 
         }
 
-        [ObservableProperty]
-        List<FullRecipeInformation> _recipeList;
-
-
-        [ObservableProperty]
-        string _recipeName;
 
         [ICommand]
         async void SearchRecipe()
@@ -44,10 +45,11 @@ namespace CookBook.ViewModels
                     _recipeList.Add(recipe);
                 }
             else
-                MessageBox.Show("nothing was found", ":(", MessageBoxButton.OK, MessageBoxImage.Warning);
-
+                MessageBox.Show("Nothing was found", ":(", MessageBoxButton.OK, MessageBoxImage.Warning);
             RecipeList = new(_recipeList);
         }
+
+
         private FullRecipeInformation _selItem;
         public FullRecipeInformation SelItem
         {

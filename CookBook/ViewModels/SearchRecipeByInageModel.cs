@@ -5,7 +5,6 @@ using Model.Lib;
 using Model.Lib.DataModels;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Windows;
 
 namespace CookBook.ViewModels
@@ -15,7 +14,6 @@ namespace CookBook.ViewModels
         Client _restClient;
         public SearchRecipeByInageModel()
         {
-            Trace.TraceWarning("SRBIM");
             _restClient = new();
             _recipeList = new();
         }

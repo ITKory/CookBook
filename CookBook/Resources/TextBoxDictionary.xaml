@@ -14,15 +14,15 @@
                         BorderBrush="Gray"
                         BorderThickness="1"
                         CornerRadius="10">
-
                         <Grid>
-                            <TextBlock 
+                            <TextBlock
+                                x:Name="SerchBox"
+                                Margin="10,0,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
-                                Margin="10,0,0,0"
-                                TextWrapping="WrapWithOverflow"
-                                FontSize="11" Text="{TemplateBinding Text}" x:Name="SerchBox"/>
-
+                                FontSize="11"
+                                Text="{TemplateBinding Text}"
+                                TextWrapping="WrapWithOverflow" />
                             <TextBlock
                                 Grid.Column="1"
                                 Margin="10,0,0,0"
@@ -32,11 +32,10 @@
                                 Foreground="Black"
                                 IsHitTestVisible="False"
                                 Text="Search">
-
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=SerchBox}" Value=""  >
+                                            <DataTrigger Binding="{Binding Text, ElementName=SerchBox}" Value="">
                                                 <Setter Property="Visibility" Value="Visible" />
                                             </DataTrigger>
                                         </Style.Triggers>

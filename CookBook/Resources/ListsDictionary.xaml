@@ -3,9 +3,7 @@
 
 
 
-
     <Style x:Key="RecipeStyle" TargetType="ListView">
-
         <Setter Property="Foreground" Value="WhiteSmoke" />
         <Setter Property="BorderThickness" Value="0" />
 
@@ -35,9 +33,10 @@
     </Style>
 
     <Style x:Key="ListItemsStyle" TargetType="ListView">
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="WhiteSmoke" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
         <Setter Property="ItemContainerStyle">
             <Setter.Value>
                 <Style TargetType="ListViewItem">
@@ -100,46 +99,26 @@
 
 
     <Style x:Key="TagStyle" TargetType="ListView">
-
-        <Setter Property="Foreground" Value="WhiteSmoke" />
         <Setter Property="BorderThickness" Value="0" />
-
         <Setter Property="ItemTemplate">
             <Setter.Value>
                 <DataTemplate DataType="{x:Type ListViewItem}">
-
-
                     <Border
-                        Width="300"
-                        Height="300"
-                        Margin="45,0,0,20"
-                        CornerRadius="10">
-
-
+                        Width="55"
+                        Height="35"
+                        CornerRadius="2">
                         <Border.Background>
-                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,5">
-                                <GradientStop Offset="0.0" Color="#f5f4f2" />
-                                <GradientStop Offset="0.2" Color="#ffe033" />
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,6">
+                                <GradientStop Offset="0" Color="Gainsboro" />
+                                <GradientStop Offset="0.6" Color="Transparent" />
                             </LinearGradientBrush>
                         </Border.Background>
-
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Ellipse Width="120" Height="120">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="{Binding Image, Converter={StaticResource ImageConverter}}" />
-                                </Ellipse.Fill>
-                            </Ellipse>
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="26"
-                                Foreground="Black"
-                                Text="{Binding Title}" />
-
-
-                        </StackPanel>
-
-
+                        <TextBlock
+                            Padding="2"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="{Binding}"
+                            TextWrapping="Wrap" />
                     </Border>
                 </DataTemplate>
             </Setter.Value>

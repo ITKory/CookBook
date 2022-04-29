@@ -10,16 +10,24 @@ namespace CookBook.ViewModels
 
     public partial class HomeViewModel : BaseUserViewModel
     {
-        Client restClient;
 
-        List<List<FullRecipeInformation>> ListListov;
+        Client _restClient;
+
+        [ObservableProperty]
+        List<FullRecipeInformation> _lunchRecipeList;
+
+        [ObservableProperty]
+        List<FullRecipeInformation> _veganRecipeList;
+
+        [ObservableProperty]
+        List<FullRecipeInformation> _dessertRecipeList;
         public HomeViewModel()
         {
             _veganRecipeList = new();
             _dessertRecipeList = new();
             _lunchRecipeList = new();
-
-            restClient = new();
+            _selItem = new();
+            _restClient = new();
             FillLists();
 
         }
@@ -32,19 +40,11 @@ namespace CookBook.ViewModels
         }
         private async Task<List<FullRecipeInformation>> FillList(string tag)
         {
-            restClient.SendRequest($"https://api.spoonacular.com/recipes/random?number=3&tags={tag}");
-            var recipes = await restClient.GetResponseSingle<RandomRecipes>();
+            _restClient.SendRequest($"https://api.spoonacular.com/recipes/random?number=3&tags={tag}");
+            var recipes = await _restClient.GetResponseSingle<RandomRecipes>();
             return recipes.Recipes;
         }
 
-        [ObservableProperty]
-        List<FullRecipeInformation> _veganRecipeList;
-
-        [ObservableProperty]
-        List<FullRecipeInformation> _lunchRecipeList;
-
-        [ObservableProperty]
-        List<FullRecipeInformation> _dessertRecipeList;
 
 
         private FullRecipeInformation _selItem;

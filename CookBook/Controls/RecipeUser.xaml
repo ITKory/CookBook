@@ -7,49 +7,49 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:CookBook.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=System.ValueTuple"
     d:DesignHeight="450"
     d:DesignWidth="800"
-    
     mc:Ignorable="d">
     <Grid>
         <Grid.Resources>
-            
-        <Converter:HtmlTextConverter  x:Key="TextConverter"/>
+            <Converter:HtmlTextConverter x:Key="TextConverter" />
         </Grid.Resources>
 
         <Grid Background="White">
             <StackPanel DataContext="{Binding SelItem}">
 
-           
+
 
                 <Image Source="{Binding Image, Converter={StaticResource ImageConverter}}" />
-                <Label>Tags</Label>
-                <ListView ItemsSource="{Binding DishTypes}" />
+
+                <Label FontSize="16" FontWeight="Bold">Tags</Label>
+                <ListView ItemsSource="{Binding DishTypes}" Style="{StaticResource TagStyle}" />
 
 
+                <Label FontSize="16" FontWeight="Bold">Summary</Label>
+                <TextBlock Text="{Binding Summary, Converter={StaticResource TextConverter}}" TextWrapping="Wrap" />
 
-                <Label>Summary</Label>
-                <TextBlock Text="{Binding Summary,Converter={StaticResource  TextConverter}}" TextWrapping="Wrap" />
-
-                <Label>Ingredients</Label>
-                <ListView ItemsSource="{Binding ExtendedIngredients}">
+                <Label FontSize="16" FontWeight="Bold">Ingredients</Label>
+                <ListView BorderThickness="0" ItemsSource="{Binding ExtendedIngredients}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Original}" />
+                            <TextBlock Text="{Binding Original}" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Label>Steps</Label>
-                <ListView ItemsSource="{Binding AnalyzedInstructions[0].steps}">
+
+                <Label FontSize="16" FontWeight="Bold">Steps</Label>
+                <ListView BorderThickness="0" ItemsSource="{Binding AnalyzedInstructions[0].steps}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextBox Width="400"    Text="{Binding step,StringFormat={} - {0}}" TextWrapping="Wrap" />
+                            <TextBlock
+                                Width="400"
+                                Text="{Binding step, StringFormat={}  --- {0}}"
+                                TextWrapping="Wrap" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
-
                 </ListView>
-
-
 
 
             </StackPanel>
