@@ -18,8 +18,6 @@
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
-
-
     <Grid>
 
         <Grid Margin="20" Background="#EBF0EF">
@@ -36,8 +34,7 @@
                     x:Name="Home"
                     Height="60"
                     Margin="0,180,0,70"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
+                    Style="{StaticResource TabButton}"
                     Command="{Binding ChangeViewCommand}"
                     CommandParameter="{Binding HomeView}">
                     <fa:ImageAwesome
@@ -59,8 +56,7 @@
                     x:Name="Profile"
                     Height="60"
                     Margin="0,0,0,30"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
+                    Style="{StaticResource TabButton}"
                     Command="{Binding ChangeViewCommand}"
                     CommandParameter="{Binding RecipeView}">
                     <fa:ImageAwesome
@@ -72,14 +68,14 @@
                     x:Name="Settings"
                     Height="60"
                     Margin="0,0,0,10"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
                     Command="{Binding ChangeViewCommand}"
+                       Style="{StaticResource TabButton}"
                     CommandParameter="{Binding RecipeByInageView}">
                     <fa:ImageAwesome
                         Width="50"
                         Foreground="Gray"
                         Icon="Edit" />
+                    
                 </Button>
             </StackPanel>
             <Grid
@@ -106,8 +102,7 @@
                     Margin="0,0,20,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
+                     Style="{StaticResource TabButton}"
                     Click="ButtonClose_Click">
                     <fa:ImageAwesome Foreground="Gray" Icon="PowerOff" />
                 </Button>

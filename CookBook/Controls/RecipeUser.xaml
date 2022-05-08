@@ -31,7 +31,7 @@
                 <TextBlock Text="{Binding Summary, Converter={StaticResource TextConverter}}" TextWrapping="Wrap" />
 
                 <Label FontSize="16" FontWeight="Bold">Ingredients</Label>
-                <ListView BorderThickness="0" ItemsSource="{Binding ExtendedIngredients}">
+                <ListView BorderThickness="0" ItemsSource="{Binding ExtendedIngredients}" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Original}" />

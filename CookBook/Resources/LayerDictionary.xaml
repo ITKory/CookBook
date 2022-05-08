@@ -24,14 +24,16 @@
                                     VerticalAlignment="Center"
                                     Background="Transparent"
                                     BorderThickness="0"
+                                    Content="X"
                                     DockPanel.Dock="Right">
-                                    X
+                              
                                 </Button>
                                 <TextBlock
                                     Margin="22,0,0,0"
                                     HorizontalAlignment="Center"
                                     FontSize="16"
                                     FontWeight="Bold"
+                                    TextWrapping="Wrap"
                                     Foreground="{DynamicResource TextForegroundKey}"
                                     Text="{TemplateBinding Title}" />
                             </DockPanel>

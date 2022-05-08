@@ -13,14 +13,12 @@ namespace Model.Lib
     {
         private RestClient _client;
         private RestRequest _request;
-        private string _token = "54af571d0b5a4619b3250e376454136f";
+        private string _token;
         public Client()
         {
             _client = new();
             _client.Authenticator = new OAuth2AuthorizationRequestHeaderAuthenticator("token", "Bearer");
-
-            var builder = new ConfigurationBuilder().AddUserSecrets<ApiKey>().Build().Providers.First().TryGet("ApiKey:ReserveToken", out var token);
-
+            var builder = new ConfigurationBuilder().AddUserSecrets<ApiKey>().Build().Providers.First().TryGet("ApiKey:Token", out var token);
             _token = token;
 
         }
