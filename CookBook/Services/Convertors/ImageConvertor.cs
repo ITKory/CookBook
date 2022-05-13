@@ -5,7 +5,7 @@ using System.Windows.Media.Imaging;
 
 namespace CookBook.Services.Convertors
 {
-    public class ImageConvertor : IValueConverter
+    public class ImageConverter : IValueConverter
     {
 
 
