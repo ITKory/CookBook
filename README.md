@@ -1,13 +1,13 @@
  ## CookBook
 
 ## Home
-![Alt Text](Doc/ResourcesForReadme/2022-05-13 13-34-50.gif)
+![Home](https://github.com/ITKory/CookBook/blob/master/Doc/ResourcesForReadme/2022-05-13%2013-34-50.gif)
 
 ## Search
-![MainPage](/Doc/ResourcesForReadme/2022-05-13 13-37-49.gif )
+![Search](https://github.com/ITKory/CookBook/blob/master/Doc/ResourcesForReadme/2022-05-13%2013-37-49.gif)
 
 ## Search by image
-![Alt Text](Doc/ResourcesForReadme/2022-05-13 13-48-35.gif)
+![SearchByImage](https://github.com/ITKory/CookBook/blob/master/Doc/ResourcesForReadme/2022-05-13%2013-48-35.gif)
 
 ## Technologies
 
