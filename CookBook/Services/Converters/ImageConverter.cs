@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
-namespace CookBook.Services.Convertors
+namespace CookBook.Services.Converters
 {
     public class ImageConverter : IValueConverter
     {

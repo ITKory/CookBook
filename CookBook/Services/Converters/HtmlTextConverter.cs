@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Data;
 
-namespace CookBook.Services.Convertors
+namespace CookBook.Services.Converters
 {
     internal class HtmlTextConverter : IValueConverter
     {
