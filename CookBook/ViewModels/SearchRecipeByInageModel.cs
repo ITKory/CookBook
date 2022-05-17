@@ -57,11 +57,13 @@ namespace CookBook.ViewModels
             get => _selItem;
             set
             {
-                SetProperty(ref _selItem, value);
-                _recipeLay.Recipe = _selItem;
-                _recipeLay.Title = _selItem.Title;
-                OnSelected(_selItem);
-            }
+                 SetProperty(ref _selItem, value);
+                if (_selItem != null) { 
+                    _recipeLay.Recipe = _selItem;
+                    _recipeLay.Title = _selItem.Title;
+                    OnSelected(_selItem);
+                }
+             }
         }
 
 

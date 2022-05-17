@@ -19,26 +19,19 @@ namespace Model.Lib
             _client = new();
             _client.Authenticator = new OAuth2AuthorizationRequestHeaderAuthenticator("token", "Bearer");
             var builder = new ConfigurationBuilder().AddUserSecrets<ApiKey>().Build().Providers.First().TryGet("ApiKey:Token", out var token);
+            if( builder == true)
             _token = token;
 
         }
 
         public void SendRequest(string uri)
         {
-            var test = $"{uri}&apiKey={_token}";
+          
             _request = new RestRequest($"{uri}&apiKey={_token}", Method.Get);
             _request.AddHeader("Content-Type", "aplication/json");
         }
 
-        public async Task<List<T>> GetResponseList<T>()
-        {
-            var response = await _client.GetAsync(_request);
-
-            var data = JsonConvert.DeserializeObject<List<T>>(response.Content);
-
-            return data;
-        }
-
+ 
         public async Task<T> GetResponseSingle<T>()
         {
             var response = await _client.GetAsync(_request);

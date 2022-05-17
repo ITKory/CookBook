@@ -33,8 +33,9 @@ namespace CookBook.ViewModels
         [ICommand]
         async void SearchRecipe()
         {
+            _recipeList = new();
             _restClient.SendRequest($"https://api.spoonacular.com/recipes/autocomplete?number=9&query={_recipeName}");
-            var autocompleteRecipes = await _restClient.GetResponseList<QuickSearch>();
+            var autocompleteRecipes = await _restClient.GetResponseSingle<List<QuickSearch>>();
 
             if (autocompleteRecipes is not null && autocompleteRecipes.Count > 0)
 
@@ -56,10 +57,13 @@ namespace CookBook.ViewModels
             get => _selItem;
             set
             {
-                SetProperty(ref _selItem, value);
-                _recipeLay.Recipe = _selItem;
-                _recipeLay.Title = _selItem.Title;
-                OnSelected(_selItem);
+                    SetProperty(ref _selItem, value);
+                if (_selItem != null)
+                {
+                    _recipeLay.Recipe = _selItem;
+                    _recipeLay.Title = _selItem.Title;
+                    OnSelected(_selItem);
+                }
             }
         }
 
